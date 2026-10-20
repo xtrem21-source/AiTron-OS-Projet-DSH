@@ -205,3 +205,12 @@ Après la première passe, la couverture a été étendue aux namespaces visible
 Vérifications : `typecheck` 5/5, `build` 9/9, `oxlint` 0 erreur, serveur relancé et Réglages affichés en français (« Permission », « Langue », « Apparence », « Taille de police », « Détail du travail », « Raccourcis clavier », « Performance et consommation », « Envoyer le journal de session… »).
 
 Restent en anglais, assumé et documenté : le menu du compte (« Settings », « Feedback », « Sign in »), la phrase d’aide sous « Raccourcis clavier », les libellés du sélecteur de modèle, le mode d’accès (« Workspace Write »), et les détails profonds de la trajectoire/conversation.
+### Validation 2026-10-20 — microphone réel (clôture de l’anomalie A1)
+
+L’utilisateur confirme que la dictée fonctionne avec un vrai microphone, dans le navigateur, sur la version publiée (`ba9f58f`).
+
+- **Chemin nominal vérifié** : le reconnaisseur démarre, transcrit et s’arrête seul à la pause.
+- **Anomalie A1 close** : la séance 3 ne prouvait que le chemin d’erreur (`not-allowed`) et la machine d’état par test unitaire ; le micro réel est désormais confirmé.
+- **Reste non mesuré** : précision de transcription par langue, comportement en environnement bruyant, et respect du silence sur un long énoncé.
+
+État du produit à cette date : interface française, catalogue des 21 assistants en français, dictée fonctionnelle, protocole linéaire monté, publication sur `xtrem21-source/AiTron-OS-Projet-DSH` (branche `main`).
