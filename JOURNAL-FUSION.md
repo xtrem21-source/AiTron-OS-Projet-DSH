@@ -318,3 +318,12 @@ Le serveur répond et le navigateur s’ouvre : le chemin nominal du lanceur est
 
 - Le premier lancement sur une machine neuve exécute `pnpm install` puis `pnpm run build` : plusieurs minutes, sans barre de progression globale.
 - Le lanceur suppose le disque `K:` présent ; hors de cette machine, il faut adapter `CACHE` et le chemin du dépôt.
+### Complément 2026-10-20 — raccourci Bureau et lancement silencieux
+
+| Élément | Détail |
+|---|---|
+| `AiTron OS.lnk` | créé sur le Bureau : cible `Lancer-AiTron.cmd`, dossier `K:\AiTron-OS-Projet-DSH`, icône `apps/desktop/resources/tray-windows.ico`, fenêtre réduite |
+| `Lancer-AiTron-Silencieux.vbs` | démarre sans fenêtre via `Lancer-AiTron-Silencieux.cmd`, journalise dans `K:\Reasonix-Temp-2\logs\web.log`, sonde le port 3080 avant et après, propose d’arrêter une instance existante ; `/silencieux` supprime toute boîte de dialogue |
+| `Arreter-AiTron.cmd` | arrête l’arbre de processus qui écoute sur 3080 (`taskkill /T /F`) |
+
+Tests réels : `Arreter-AiTron.cmd` → « Serveur arrete (PID 1040). » ; `cscript Lancer-AiTron-Silencieux.vbs /silencieux` → exit 0, port 3080 en écoute (PID 3664), journal avec l’URL tokenisée.

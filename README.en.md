@@ -23,7 +23,15 @@ The graft does not copy AionUI's Electron UI: it **reimplements its three surfac
 
 The launcher checks Node.js and pnpm, moves `TEMP`/`TMP` to `K:\Reasonix-Temp-2`, installs dependencies on first run, builds on first run, then starts `dsh web` on `http://127.0.0.1:3080` and opens the browser.
 
-Create a desktop shortcut with right-click → **Send to → Desktop (create shortcut)**. Stop it by closing the window or pressing `Ctrl+C` in it.
+An **AiTron OS** shortcut is already on the Desktop (product icon, working directory set).
+
+| File | Behaviour |
+|---|---|
+| `Lancer-AiTron.cmd` | visible window: progress, install, build, then the server; closing it stops everything |
+| `Lancer-AiTron-Silencieux.vbs` | no window; log in `K:\Reasonix-Temp-2\logs\web.log`; asks before replacing a running server |
+| `Arreter-AiTron.cmd` | stops the server listening on port 3080, process tree included |
+
+Silent start at logon: `wscript "K:\AiTron-OS-Projet-DSH\Lancer-AiTron-Silencieux.vbs" /silencieux`.
 
 Manual alternative in PowerShell:
 

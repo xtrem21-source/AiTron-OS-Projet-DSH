@@ -44,7 +44,17 @@ Le serveur écoute sur `http://127.0.0.1:3080` et ouvre le navigateur avec un je
 | 4 | compile au premier lancement (`pnpm run build`) |
 | 5 | démarre `dsh web` sur `http://127.0.0.1:3080` et ouvre le navigateur |
 
-Pour un raccourci : clic droit sur `Lancer-AiTron.cmd` → **Envoyer vers → Bureau (créer un raccourci)**.
+Un raccourci **AiTron OS** est déjà posé sur le Bureau (icône du produit, dossier de travail réglé).
+
+### Autres façons de lancer
+
+| Fichier | Comportement |
+|---|---|
+| `Lancer-AiTron.cmd` | fenêtre visible : progression, installation, build, puis serveur ; fermer la fenêtre arrête tout |
+| `Lancer-AiTron-Silencieux.vbs` | aucune fenêtre ; journal dans `K:\Reasonix-Temp-2\logs\web.log` ; demande confirmation si le serveur tourne déjà |
+| `Arreter-AiTron.cmd` | arrête le serveur qui écoute sur le port 3080 (arbre de processus compris) |
+
+Pour un lancement silencieux à la connexion : `wscript "K:\AiTron-OS-Projet-DSH\Lancer-AiTron-Silencieux.vbs" /silencieux` (aucune boîte de dialogue).
 Pour arrêter : fermer la fenêtre noire ou `Ctrl+C` dedans.
 
 Variante manuelle, dans PowerShell :
