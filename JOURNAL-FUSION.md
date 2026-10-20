@@ -214,3 +214,29 @@ L’utilisateur confirme que la dictée fonctionne avec un vrai microphone, dans
 - **Reste non mesuré** : précision de transcription par langue, comportement en environnement bruyant, et respect du silence sur un long énoncé.
 
 État du produit à cette date : interface française, catalogue des 21 assistants en français, dictée fonctionnelle, protocole linéaire monté, publication sur `xtrem21-source/AiTron-OS-Projet-DSH` (branche `main`).
+---
+
+## Entrée 2026-10-20 — Séance 4 : finitions, version 0.1.0, publication enrichie
+
+### Objectif
+
+Terminer la couverture française visible, produire une **version complète** et mettre GitHub à niveau : tags, release, description, topics.
+
+### Ce qui a été fait
+
+| # | Action | Résultat |
+|---|---|---|
+| 1 | Derniers namespaces visibles : `settings.account`, `model`, `permission.access`, `shortcuts` (complété) | menu de compte, sélecteur de modèle, pastille de mode d’accès et phrase d’aide des raccourcis en français |
+| 2 | `RELEASE-v0.1.0.md` | notes de version bilingues |
+| 3 | Vérifications | `typecheck` 5/5, `build` 9/9, `build:check` 2/2, `oxlint` 0 erreur |
+| 4 | Git | commit, tag annoté `v0.1.0` + tag daté `fige-2026-10-20`, push |
+| 5 | GitHub | description, topics, release `v0.1.0` |
+
+### Convention de tags retenue
+
+Constatée sur les dépôts voisins (`Regles-Reasonix` : `v0.1.0` + tags datés `fige-AAAA-MM-JJ`) et en amont (`dsh-v0.2.1-rc.2`). Le fork suit la convention locale : **`v0.1.0`** pour la version, **`fige-2026-10-20`** pour la photo datée.
+
+### Anomalies
+
+- La publication de la release et des métadonnées dépend du jeton stocké dans le gestionnaire d’identifiants Git de la machine ; sans lui, la release reste à créer à la main.
+- Couverture française toujours non exhaustive sur les détails profonds.

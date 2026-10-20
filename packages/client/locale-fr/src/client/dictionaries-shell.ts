@@ -750,3 +750,91 @@ export const frChat: LocaleDict = {
   'clock.md': '{d}/{m}',
   'clock.ymd': '{d}/{m}/{y}',
 }
+
+/** Account menu and sign-in surface, visible parts. */
+export const frSettingsAccount: LocaleDict = {
+  settings: 'Paramètres',
+  contactUs: 'Votre avis',
+  menu: 'Menu du compte',
+  nav: 'Compte',
+  more: 'Plus',
+  signIn: 'Se connecter',
+  signOut: 'Se déconnecter',
+  close: 'Fermer',
+  cancel: 'Annuler',
+  loading: 'Chargement…',
+  signedIn: 'Connecté à DeepSeek',
+  signedOut: 'Non connecté',
+  accountInfo: 'Plus d’informations sur le compte',
+  usage: 'Voir la consommation',
+  topUp: 'Recharger',
+  balance: 'Solde rechargé',
+  bonusBalance: 'Solde offert',
+  balanceUnavailable: 'Voir sur la plateforme',
+  balanceSignedOut: 'Connectez-vous pour voir',
+  profileUnavailable: 'Les détails du compte ne sont pas encore disponibles.',
+}
+
+/** Model picker: trigger, menu, efforts, search and errors. */
+export const frModel: LocaleDict = {
+  'provider.account': 'Compte DeepSeek',
+  'command.label': 'Modèle',
+  'command.description': 'Choisir le modèle de cette conversation',
+  'option.loadError': 'Échec du chargement du catalogue : {message}',
+  'trigger.fallback': 'Choisir un modèle',
+  'trigger.loading': 'Chargement des modèles…',
+  'trigger.selectAria': 'Choisir un modèle',
+  'trigger.aria': 'Choisir un modèle, actuel : {model}',
+  'trigger.ariaEffort': 'Choisir un modèle, actuel : {model}, effort de raisonnement {effort}',
+  'menu.aria': 'Modèle et effort de raisonnement',
+  'menu.model': 'Modèle',
+  'menu.effort': 'Effort',
+  'effort.providerDefault': 'Par défaut',
+  'status.loading': 'Actualisation de la liste des modèles…',
+  'error.action': 'Échec de l’opération sur le modèle : {message}',
+  'error.sessionInUse': 'Cette session est déjà utilisée, peut-être par une autre instance de DSH (dsh web ou l’application de bureau). Fermez les autres instances et réessayez.',
+  'action.reload': 'Recharger',
+  'warning.groupLoad': 'Échec du chargement de {name} : {message}',
+  'search.placeholder': 'Rechercher des modèles…',
+  'search.clear': 'Effacer la recherche',
+  'search.empty': 'Aucun modèle correspondant.',
+  'empty.models': 'Aucun modèle disponible.',
+  'empty.efforts': 'Ce modèle ne propose aucun niveau d’effort de raisonnement.',
+}
+
+/** Current-session access-mode chip and its confirmations. */
+export const frPermissionAccess: LocaleDict = {
+  'mode': 'Mode d’accès, actuel : {name}',
+  'close': 'Fermer',
+  'preset.readOnly': 'Lecture seule',
+  'preset.workspaceWrite': 'Écriture dans l’espace de travail',
+  'preset.fullAccess': 'Accès complet',
+  'confirm.title': 'Activer l’accès complet ?',
+  'confirm.description': 'L’accès complet réduit les confirmations et permet à l’agent d’agir directement, y compris sur des opérations sensibles, des modifications de fichiers ou des commandes externes. Ne l’utilisez que si vous faites confiance à la tâche en cours.',
+  'confirm.acknowledge': 'Je comprends les risques et je veux continuer',
+  'confirm.cancel': 'Annuler',
+  'confirm.enable': 'Activer l’accès complet',
+  'auto.label': 'Revue automatique',
+  'auto.badge': 'EXP',
+  'auto.description': 'Exécution sans bac à sable après une revue expérimentale, par le même modèle, de chaque appel d’outil natif et de chaque appel interne PTC.',
+  'auto.confirm.title': 'Activer la revue automatique (expérimentale) ?',
+  'auto.confirm.description': 'La revue automatique s’exécute sans bac à sable. Avant chaque appel d’outil natif et chaque appel interne PTC, le même modèle que l’agent décide de l’autoriser ; vous approuvez ou refusez ceux qu’il refuse. Cette fonction est expérimentale, peut autoriser ou refuser à tort et consomme des jetons supplémentaires.',
+  'auto.confirm.acknowledge': 'Je comprends ces risques et je veux continuer',
+  'auto.confirm.enable': 'Activer la revue automatique',
+}
+
+/** Keyboard-shortcut reference chrome. */
+export const frShortcuts: LocaleDict = {
+  'title': 'Raccourcis clavier',
+  'open': 'Ouvrir les raccourcis clavier',
+  'settings': 'Raccourcis clavier',
+  'view': 'Modifier les raccourcis',
+  'description': 'Affichez et modifiez les raccourcis et actions de saisie disponibles',
+  'search': 'Rechercher un raccourci',
+  'close': 'Fermer les raccourcis clavier',
+  'application': 'Application',
+  'input': 'Saisie du message',
+  'menus': 'Menus et boîtes de dialogue',
+  'approval': 'Zone d’approbation',
+  'unbound': 'Aucun raccourci',
+}

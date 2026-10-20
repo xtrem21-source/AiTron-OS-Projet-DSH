@@ -11,8 +11,9 @@ import type { LocaleDict } from '@deepseek-ai/dsh-client-locale/client'
 import { frAionui, frCommon, frConversation, frVoiceInput } from './dictionaries.ts'
 import {
   frDeliverables, frPluginManager, frScheduleManager, frSettings, frSettingsAgentPreset,
-  frChat, frSettingsLocale, frSettingsLocaleRow, frSettingsModels, frSettingsPermission,
-  frSettingsPlugins, frSettingsSessionLog, frSettingsShortcuts, frSettingsTheme, frSidebar, frSidebarRight,
+  frChat, frModel, frPermissionAccess, frSettingsAccount, frSettingsLocale, frSettingsLocaleRow,
+  frSettingsModels, frSettingsPermission,
+  frSettingsPlugins, frSettingsSessionLog, frSettingsTheme, frShortcuts, frSidebar, frSidebarRight,
   frSubagent, frTrajectory, frWorkspace,
 } from './dictionaries-shell.ts'
 
@@ -36,8 +37,11 @@ const NAMESPACES: readonly (readonly [string, LocaleDict])[] = [
   ['settings.locale', frSettingsLocaleRow],
   ['settings.permission', frSettingsPermission],
   ['settings.sessionLog', frSettingsSessionLog],
-  ['shortcuts', frSettingsShortcuts],
   ['chat', frChat],
+  ['settings.account', frSettingsAccount],
+  ['model', frModel],
+  ['permission.access', frPermissionAccess],
+  ['shortcuts', frShortcuts],
   ['settings.theme', frSettingsTheme],
   ['settings.plugins', frSettingsPlugins],
   ['settings.agentPreset', frSettingsAgentPreset],
