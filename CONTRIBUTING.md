@@ -1,5 +1,20 @@
 # Contributing
 
+> **Ce fork (AiTron OS).** Les contributions portent sur les paquets ajoutés
+> (`ui-aionui`, `locale-fr`, `ui-voice-input`, `aionui-linear`) et sur la
+> traduction française. Avant une pull request : `pnpm run typecheck`,
+> `pnpm run build`, `pnpm run build:check` et `pnpm test`. Une extension passe
+> par un slot ou un service Cordis, jamais par une modification du cœur.
+> Vulnérabilité ? Voir [SECURITY.md](SECURITY.md), jamais une issue publique.
+>
+> **This fork (AiTron OS).** Contributions target the added packages and the
+> French pack. Run `typecheck`, `build`, `build:check` and `test` before opening
+> a pull request; extend through a Cordis slot or service, never by patching the
+> core. Security reports go through [SECURITY.md](SECURITY.md).
+
+---
+# Contributing
+
 English | [中文](CONTRIBUTING.zh.md)
 
 Thank you for your interest in contributing to DeepSeek Harness!
