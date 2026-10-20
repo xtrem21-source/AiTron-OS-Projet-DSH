@@ -285,3 +285,36 @@ Répondre aux manques signalés par l’audit externe (notation « F ») : fichi
 - L’audit externe note un référentiel « grand public » : la note ne mesure pas la qualité du code, seulement la présence de fichiers attendus. Les fichiers manquants sont désormais là ; `CONTRIBUTING` et Dependabot existaient déjà.
 - La CI amont reste dans le dépôt mais désactivée : la réactiver supposerait ses runners et ses secrets.
 - Un workflow amont (`e2e.yml`) a produit un échec avant d’être désactivé ; l’historique le conserve.
+---
+
+## Entrée 2026-10-20 — Séance 6 : lancement Windows
+
+### Objectif
+
+Rendre le produit lançable sans ligne de commande depuis Windows.
+
+### Ce qui a été fait
+
+| # | Action | Résultat |
+|---|---|---|
+| 1 | `Lancer-AiTron.cmd` | double-clic : vérifie Node/pnpm, déporte TEMP/TMP sur `K:`, installe au premier lancement, compile si nécessaire, démarre `dsh web` et ouvre le navigateur |
+| 2 | Messages d’erreur explicites | Node manquant → lien nodejs.org ; pnpm manquant → `npm install -g pnpm@11.28.5` ; disque `K:` absent → message dédié |
+| 3 | Documentation | section « Lancer sous Windows » dans `README.md` et « Launching on Windows » dans `README.en.md`, avec la variante PowerShell et les commandes `winget`/`npm` |
+
+### Test du lanceur
+
+Exécution réelle de `Lancer-AiTron.cmd` avec l’entrée standard fermée (`< nul`) :
+
+```
+[1/3] Dependances deja installees.
+[2/3] Build deja present.
+[3/3] Demarrage du serveur sur http://127.0.0.1:3080
+dsh web: http://127.0.0.1:3080/?token=…
+```
+
+Le serveur répond et le navigateur s’ouvre : le chemin nominal du lanceur est vérifié, y compris le cas « dépendances et build déjà présents ».
+
+### Anomalies
+
+- Le premier lancement sur une machine neuve exécute `pnpm install` puis `pnpm run build` : plusieurs minutes, sans barre de progression globale.
+- Le lanceur suppose le disque `K:` présent ; hors de cette machine, il faut adapter `CACHE` et le chemin du dépôt.

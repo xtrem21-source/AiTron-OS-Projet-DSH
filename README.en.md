@@ -17,6 +17,22 @@ One runnable product built from two projects:
 
 The graft does not copy AionUI's Electron UI: it **reimplements its three surfaces** on DSH's native extension points (slots, right-sidebar tab types, sessions), so the fork stays maintainable against engine updates.
 
+## Launching on Windows
+
+**Simplest: double-click `Lancer-AiTron.cmd`** at the repository root.
+
+The launcher checks Node.js and pnpm, moves `TEMP`/`TMP` to `K:\Reasonix-Temp-2`, installs dependencies on first run, builds on first run, then starts `dsh web` on `http://127.0.0.1:3080` and opens the browser.
+
+Create a desktop shortcut with right-click → **Send to → Desktop (create shortcut)**. Stop it by closing the window or pressing `Ctrl+C` in it.
+
+Manual alternative in PowerShell:
+
+```powershell
+cd K:\AiTron-OS-Projet-DSH
+pnpm install
+pnpm run build
+pnpm dsh web
+```
 ## What was added
 
 | Package | Contribution |

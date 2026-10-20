@@ -32,6 +32,36 @@ pnpm dsh web
 
 Le serveur écoute sur `http://127.0.0.1:3080` et ouvre le navigateur avec un jeton de lancement (`--no-open` pour l’éviter).
 
+## Lancer sous Windows
+
+**Le plus simple : double-cliquer `Lancer-AiTron.cmd`** à la racine du dépôt.
+
+| Étape | Ce que fait le lanceur |
+|---|---|
+| 1 | vérifie Node.js et pnpm, avec un message clair si l’un manque |
+| 2 | déporte `TEMP`/`TMP` sur `K:\Reasonix-Temp-2` |
+| 3 | installe les dépendances au premier lancement (`pnpm install --frozen-lockfile`) |
+| 4 | compile au premier lancement (`pnpm run build`) |
+| 5 | démarre `dsh web` sur `http://127.0.0.1:3080` et ouvre le navigateur |
+
+Pour un raccourci : clic droit sur `Lancer-AiTron.cmd` → **Envoyer vers → Bureau (créer un raccourci)**.
+Pour arrêter : fermer la fenêtre noire ou `Ctrl+C` dedans.
+
+Variante manuelle, dans PowerShell :
+
+```powershell
+cd K:\AiTron-OS-Projet-DSH
+pnpm install
+pnpm run build
+pnpm dsh web
+```
+
+Prérequis si les commandes manquent :
+
+```powershell
+winget install OpenJS.NodeJS.LTS     # Node.js 24
+npm install -g pnpm@11.28.5          # pnpm
+```
 ## Ce qui a été ajouté
 
 | Paquet | Apport |
