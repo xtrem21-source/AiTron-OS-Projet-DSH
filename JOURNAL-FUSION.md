@@ -240,3 +240,48 @@ Constatée sur les dépôts voisins (`Regles-Reasonix` : `v0.1.0` + tags datés 
 
 - La publication de la release et des métadonnées dépend du jeton stocké dans le gestionnaire d’identifiants Git de la machine ; sans lui, la release reste à créer à la main.
 - Couverture française toujours non exhaustive sur les détails profonds.
+---
+
+## Entrée 2026-10-20 — Séance 5 : conformité open-source et automatisations GitHub
+
+### Objectif
+
+Répondre aux manques signalés par l’audit externe (notation « F ») : fichiers institutionnels, Dependabot, CI sur les pull requests — et mettre le dépôt GitHub au niveau d’une publication publique.
+
+### Constat avant action
+
+| Élément | État réel |
+|---|---|
+| `CONTRIBUTING.md` | **présent** (amont) — non détecté par l’audit |
+| `.github/dependabot.yml` | **présent** (amont : npm, uv, github-actions, cooldown 30 j) |
+| `.github/workflows/ci.yml` | **présent** mais cible des runners d’entreprise et des variables absentes du fork |
+| `SECURITY.md` | **absent** |
+| `CODE_OF_CONDUCT.md` | **absent** |
+| Workflows actifs | 25 workflows amont, dont `e2e.yml` qui échoue sur un push sans `DEEPSEEK_API_KEY` |
+
+### Ce qui a été fait
+
+| # | Action | Résultat |
+|---|---|---|
+| 1 | `SECURITY.md` bilingue | versions suivies, signalement privé via GitHub Security Advisories, périmètre, engagements, secrets |
+| 2 | `CODE_OF_CONDUCT.md` | Contributor Covenant 2.1, FR + EN |
+| 3 | `CONTRIBUTING.md` | section de fork en tête (paquets concernés, commandes à lancer, règle Cordis), texte amont conservé |
+| 4 | `.github/workflows/fork-ci.yml` | `install --frozen-lockfile`, `typecheck`, `build`, `build:check` sur push `main`, PR et manuel ; Node 24, pnpm 11.28.5, cache pnpm |
+| 5 | `README.md` | devient la vitrine du projet (badges licence/version/langues/CI, démarrage, modèle, vérifications, structure) ; texte amont déplacé dans `README-UPSTREAM.md` |
+| 6 | Workflows amont | **désactivés** via l’API (25 workflows) sauf `Fork CI` : plus de statut rouge dû à des runners ou secrets absents |
+| 7 | Métadonnées GitHub | description posée, topics `ai-agents, aionui, cordis, deepseek-harness, french, plugin-architecture, typescript, voice-input`, signalement privé de vulnérabilités **activé** |
+| 8 | Release | `v0.1.0` publiée avec les notes bilingues de `RELEASE-v0.1.0.md` |
+
+### Preuves
+
+- `Fork CI` sur GitHub : **run 39414284114, conclusion `success`**, commit `7cc1b24d`.
+- `GET /releases` : `v0.1.0` publié (`2026-10-20T11:19:17Z`).
+- `GET /private-vulnerability-reporting` : `enabled=True`.
+- Topics et description relus via l’API après écriture.
+- Tags : `v0.1.0`, `fige-2026-10-20` + jeu amont `dsh-v*` poussé.
+
+### Anomalies
+
+- L’audit externe note un référentiel « grand public » : la note ne mesure pas la qualité du code, seulement la présence de fichiers attendus. Les fichiers manquants sont désormais là ; `CONTRIBUTING` et Dependabot existaient déjà.
+- La CI amont reste dans le dépôt mais désactivée : la réactiver supposerait ses runners et ses secrets.
+- Un workflow amont (`e2e.yml`) a produit un échec avant d’être désactivé ; l’historique le conserve.
