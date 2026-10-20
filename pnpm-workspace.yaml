@@ -114,3 +114,9 @@ patchedDependencies:
   app-builder-lib@26.17.0: patches/app-builder-lib@26.17.0.patch
   exceljs@4.4.0: patches/exceljs@4.4.0.patch
   node-pty@1.2.0-beta.15: patches/node-pty@1.2.0-beta.15.patch
+
+# Every package cache stays off drive C:. pnpm 11 reads its settings from this
+# file, not from .npmrc (which is kept only for npm-compatible tooling), so the
+# store and the metadata cache are declared here.
+storeDir: K:/Reasonix-Temp-2/pnpm-store
+cacheDir: K:/Reasonix-Temp-2/pnpm-cache

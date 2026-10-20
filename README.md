@@ -1,5 +1,7 @@
 # DeepSeek Harness
 
+> **Fork notice** — this repository also ships the **AiTron OS** fusion: AionUI surfaces, a French interface and dictation. Read [README.fr.md](README.fr.md) or [README.en.md](README.en.md). Upstream engine documentation follows.
+
 English | [中文](README.zh.md)
 
 DeepSeek Harness (`dsh`) is an open-source agent harness developed by [DeepSeek AI](https://deepseek.com).

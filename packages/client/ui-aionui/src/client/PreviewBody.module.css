@@ -1,0 +1,142 @@
+/* Two panes: a fixed file rail and the document that takes the rest. */
+.root {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  min-height: 0;
+  color: var(--dsw-alias-label-primary);
+  font-size: var(--dsh-content-font-size-secondary, 13px);
+  line-height: 1.5;
+}
+
+.rail {
+  display: flex;
+  flex: 0 0 200px;
+  flex-direction: column;
+  min-height: 0;
+  border-right: 0.5px solid var(--dsw-alias-border-l3);
+}
+
+.railHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 0.5px solid var(--dsw-alias-border-l3);
+}
+
+.railTitle {
+  font-weight: 600;
+}
+
+.tool {
+  padding: 2px 8px;
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  background: none;
+  border: 0.5px solid var(--dsw-alias-border-l3);
+  border-radius: 6px;
+}
+
+.files {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 4px;
+  overflow: auto;
+  list-style: none;
+}
+
+.file,
+.fileActive {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4px 8px;
+  overflow: hidden;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+}
+
+.fileActive {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.folder {
+  display: block;
+  padding: 4px 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.45;
+}
+
+.document {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+}
+
+.note {
+  margin: 8px 12px;
+  opacity: 0.65;
+}
+
+.code {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px;
+  overflow: auto;
+  font-family: var(--dsh-monospace-font-family, ui-monospace, monospace);
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  object-fit: contain;
+}
+
+.frame {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+}
+
+.tableWrap {
+  padding: 8px 12px;
+  overflow: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.table td {
+  padding: 3px 10px;
+  border: 0.5px solid var(--dsw-alias-border-l3);
+}
+
+.tableHead {
+  font-weight: 600;
+}
+
+.titleGlyph {
+  margin-right: 6px;
+}

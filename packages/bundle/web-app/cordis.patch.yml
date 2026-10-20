@@ -194,6 +194,12 @@
     # tree settles and the required-entry audit passes. Invocation-only values
     # come from the webStartup provider; the advertised application URL is
     # this row's `publicUrl`, otherwise the bind-address URL.
+    # AionUI linear prompt protocol: one static tail section plus a per-step
+    # audit of system messages appended after user history, the only history
+    # shape that moves a request prefix and costs a provider cache hit.
+    - id: aionui-linear
+      name: '@deepseek-ai/dsh-aionui-linear'
+
     - id: web-runtime
       name: '@deepseek-ai/dsh-web-app'
       inject: [webStartup]
@@ -302,6 +308,21 @@
     # The right Sidebar's workspace file tree tab type.
     - id: ui-sidebar-files
       name: '@deepseek-ai/dsh-client-ui-sidebar-files'
+
+    # The AionUI workspace page (assistant catalog and task board) and the
+    # generated-file preview tab type it registers.
+    - id: ui-aionui
+      name: '@deepseek-ai/dsh-client-ui-aionui'
+
+    # French language pack: registers fr with an English fallback and translates
+    # the shell, the composer and the AionUI surfaces.
+    - id: locale-fr
+      name: '@deepseek-ai/dsh-client-locale-fr'
+
+    # Dictation button in the conversation composer, on the browser's own
+    # speech recognizer.
+    - id: ui-voice-input
+      name: '@deepseek-ai/dsh-client-ui-voice-input'
 
     - id: ui-settings
       name: '@deepseek-ai/dsh-client-ui-settings'

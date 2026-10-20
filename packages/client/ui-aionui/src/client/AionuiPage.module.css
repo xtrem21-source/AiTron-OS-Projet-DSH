@@ -1,0 +1,277 @@
+/* The AionUI page fills the main column: a fixed header strip and one scroller. */
+.root {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  color: var(--dsw-alias-label-primary);
+  font-size: var(--dsh-content-font-size-secondary, 13px);
+  line-height: 1.5;
+}
+
+.header {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  align-items: center;
+  box-sizing: border-box;
+  height: 48px;
+  padding: 0 16px;
+  border-bottom: 0.5px solid var(--dsw-alias-border-l3);
+}
+
+.brand {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+}
+
+.tabs {
+  display: inline-flex;
+  flex: 1 1 auto;
+  gap: 4px;
+}
+
+.tab,
+.tabActive {
+  padding: 4px 10px;
+  color: inherit;
+  font: inherit;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.65;
+}
+
+.tabActive {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  opacity: 1;
+}
+
+.body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.sectionHead {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sectionSubtitle {
+  margin: 0;
+  opacity: 0.65;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border: 0.5px solid var(--dsw-alias-border-l3);
+  border-radius: 10px;
+}
+
+.cardHead {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.cardMark {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-weight: 600;
+  border: 0.5px solid var(--dsw-alias-border-l3);
+  border-radius: 8px;
+}
+
+.cardHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cardDescription {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  opacity: 0.7;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.cardActions,
+.cardForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+.textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 6px 8px;
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+  background: none;
+  border: 0.5px solid var(--dsw-alias-border-l3);
+  border-radius: 8px;
+}
+
+.starters {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.starter {
+  display: block;
+  width: 100%;
+  padding: 6px 8px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: 0.5px dashed var(--dsw-alias-border-l3);
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+.primary,
+.secondary,
+.danger {
+  padding: 5px 10px;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0.5px solid var(--dsw-alias-border-l3);
+  border-radius: 8px;
+}
+
+.primary {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.danger {
+  opacity: 0.75;
+}
+
+.empty {
+  margin: 24px 0;
+  text-align: center;
+  opacity: 0.65;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 0.5px solid var(--dsw-alias-border-l3);
+  border-radius: 10px;
+}
+
+.taskMain {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+}
+
+.phase {
+  flex: 0 0 auto;
+  padding: 1px 8px;
+  font-size: 11px;
+  border: 0.5px solid var(--dsw-alias-border-l3);
+  border-radius: 999px;
+}
+
+.phase[data-phase='running'] {
+  font-weight: 600;
+}
+
+.taskTitle {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskTime {
+  flex: 0 0 auto;
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+.taskActions {
+  display: flex;
+  gap: 6px;
+}
+
+.taskFailure {
+  margin: 0;
+  font-size: 12px;
+  color: var(--dsw-alias-label-primary);
+  opacity: 0.8;
+}
